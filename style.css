@@ -1,0 +1,67 @@
+/* ===================== RESET ==========================*/
+/* :root{
+  font-size :5px
+} */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img{
+  width: 100%;
+  height: auto
+}
+
+a{
+  text-decoration: none;
+}
+
+/* ===================== LAYOUT ==========================*/
+
+
+body{
+  background-color : #CCF4E6
+}
+
+
+#header{
+  height: 4.5rem;
+}
+
+header .container{
+margin : 1.25rem  1.5rem ;  
+}
+
+nav{
+  display : flex;
+  justify-content: space-between;
+}
+
+.logo{
+  font-size : 1.3rem;
+  font-family: poppins;
+  font-weight: 700;
+}
+
+.container{
+  margin-right: 1.5rem;
+  margin-left: 1.5rem;
+  width: 100%;
+}
+
+main .tittle{
+  font-size : 1.8rem;
+  font-weight: 700;
+  font-family: poppins;
+  text-align: center;
+}
+
+main .subtitle{
+  font-size : 1rem;
+  font-weight: 400;
+  font-family: DM sans;
+  text-align: center;
+  color : #767676
+}
