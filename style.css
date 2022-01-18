@@ -1,7 +1,4 @@
 /* ===================== RESET ==========================*/
-/* :root{
-  font-size :5px
-} */
 
 *{
   margin: 0;
@@ -18,12 +15,21 @@ a{
   text-decoration: none;
 }
 
+/* ===================== BASE ==========================*/
+body{
+  background-color : #F9F9F9
+  font 400 1rem 'DM Sans', sans-serif;
+}
+/* =====================  ?  ==========================*/
+
+:root{
+  
+}
+
+
 /* ===================== LAYOUT ==========================*/
 
 
-body{
-  background-color : #CCF4E6
-}
 
 
 #header{
@@ -40,9 +46,15 @@ nav{
 }
 
 .logo{
-  font-size : 1.3rem;
+  font-size: 1.3rem;
   font-family: poppins;
   font-weight: 700;
+  color: #0F241D;
+
+}
+
+.logo span{
+  color:#69B99D;
 }
 
 .container{
@@ -56,6 +68,9 @@ main .tittle{
   font-weight: 700;
   font-family: poppins;
   text-align: center;
+  margin-top:2rem;
+  margin-bottom:1rem
+  
 }
 
 main .subtitle{
@@ -63,5 +78,6 @@ main .subtitle{
   font-weight: 400;
   font-family: DM sans;
   text-align: center;
-  color : #767676
+  color : #767676;
+  margin-bottom:2rem;
 }
