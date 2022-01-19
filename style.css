@@ -12,17 +12,40 @@ img{
 }
 
 a{
+  
   text-decoration: none;
 }
 
 /* ===================== BASE ==========================*/
 body{
-  background-color : #F9F9F9
-  font 400 1rem 'DM Sans', sans-serif;
+   
+  font : 400 1rem 'DM Sans', sans-serif;
+  color: var(--text-color);
+  background: var(--body-color);
+  -webkit-font-smoothing:antialiased;
+}
+
+h1{
+  
+  font-family: 'poppins',sans-serif;
+  font-weight: 700;
+  font-size:1.875rem;
+  -webkit-font-smoothing:auto;
+  
 }
 /* =====================  ?  ==========================*/
 
 :root{
+   /* colors */
+   --hue: 159;
+   /* HSL color mode */
+   --base-color: hsl(var(--hue) 36% 57%);
+   --base-color-second: hsl(var(--hue) 65% 88%);
+   --base-color-alt: hsl(var(--hue) 57% 53%);
+   --title-color: hsl(var(--hue) 41% 10%);
+   --text-color: hsl(0 0% 46%);
+   --text-color-light: hsl(0 0% 98%);
+   --body-color: hsl(0 0% 98%);
   
 }
 
@@ -33,28 +56,34 @@ body{
 
 
 #header{
-  height: 4.5rem;
+  
+  border-bottom: 1px solid #ccc;
 }
 
 header .container{
-margin : 1.25rem  1.5rem ;  
+/* margin : 1.25rem  1.5rem ;   */
 }
 
 nav{
   display : flex;
   justify-content: space-between;
+  height: 4.5rem;
+  align-items: center;
+
 }
 
 .logo{
   font-size: 1.3rem;
-  font-family: poppins;
+  font-family: 'poppins';
   font-weight: 700;
-  color: #0F241D;
+  color:var(--title-color);
+  /* color: #0F241D; */
 
 }
 
 .logo span{
-  color:#69B99D;
+  color:var(--base-color);
+  /* color:#69B99D; */
 }
 
 .container{
@@ -63,21 +92,76 @@ nav{
   width: 100%;
 }
 
+.section{ 
+  padding: 5rem 0;
+}
+
+/* se coloca este grid para tener la propuedad gap para dar un espaciado  */
+.grid{
+  display:grid;
+  gap:2rem;
+}
+
 main .tittle{
   font-size : 1.8rem;
   font-weight: 700;
   font-family: poppins;
-  text-align: center;
-  margin-top:2rem;
-  margin-bottom:1rem
+  /* text-align: center;  */
+  /* margin-top:2rem;
+  margin-bottom:1rem; */
+  color: var(--title-color)
   
 }
 
 main .subtitle{
-  font-size : 1rem;
+  /* font-size : 1rem;
   font-weight: 400;
-  font-family: DM sans;
-  text-align: center;
-  color : #767676;
-  margin-bottom:2rem;
+  font-family: DM sans; */
+  /* text-align: center; */
+  /* color : #767676; */
+  /* margin-bottom:2rem; */
+}
+
+.button{
+  
+}
+
+/* ===================== HOME ==========================*/
+
+#home .container{
+  margin: 0 ;
+}
+
+#home .image{
+  position:relative;
+}
+
+#home .image::before{
+ content:"";
+ height:100%;
+ width:100%;
+ background:var(--base-color-second);
+ position:absolute;
+ z-index:0;
+ top:-16%;
+ left:10.8%;
+ 
+}
+
+#home .image img{
+  position:relative;
+  right:2.93rem;
+  
+}
+
+#home .image img ,
+#home .image::before{
+border-radius:0.25rem;
+}
+     
+#home .text{
+  margin-left:1.5rem;
+  margin-right:1.5rem;
+  text-align:center;
+
 }
