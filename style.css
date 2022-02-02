@@ -40,6 +40,11 @@ ul{
 }
 
 /* ===================== BASE ==========================*/
+html{
+  scroll-behavior: smooth;
+}
+
+
 body{
    
   font : 400 1rem 'DM Sans', sans-serif;
@@ -119,6 +124,9 @@ body{
   margin-bottom:4rem;
 }
 
+.section header strong{
+  color:var(--base-color);
+}
 
 
 
@@ -135,6 +143,20 @@ body{
   z-index: 100;
   background-color: var(--body-color);
   width: 100%;
+  transition:0.4s;
+}
+
+#header.scroll{
+  background-color: var(--base-color);
+ box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
+}
+
+#header.scroll .logo span{
+  color:white;
+}
+
+#header.scroll .icon-menu{
+  color: white;
 }
 
 main{
@@ -196,6 +218,9 @@ nav ul li a:hover::after{
 nav .menu{
   opacity: 0;
   visibility:hidden;
+
+  top:-20rem;
+  transition:0.2s;
 } 
 
 /* mostrar menu */
@@ -210,11 +235,17 @@ nav.show .menu{
   top:0;
   left:0;
 
-}
-
-nav.show .menu {
   display:grid;
   place-content:center;
+
+}
+
+nav .menu ul{
+  display:none;
+}
+
+nav.show .menu ul{
+  display:grid;
 }
 
 nav ul.grid{
@@ -236,12 +267,15 @@ nav .icon-close{
 
   position: absolute;
   right:1.5rem;
-  /* to-do animacion */
+  top:-1.5rem;
+
+  transition: 0.2s;
 }
 
 nav.show .icon-close{
   visibility:visible;
   opacity: 1;
+  top:1.5rem;
   
 }
 
@@ -343,18 +377,34 @@ border-radius:0.25rem;
 
 
 
-/* #about .text p{
-  margin-bottom:2rem;
-} */
+
+/* ===================== SERVICES ==========================*/
 
 
+.cards.grid{
+  gap:1.5rem
+}
+
+.card{
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius:0.25rem 0.25rem 0 0; 
+  text-align:center;
+}
 
 
+ .card i{
+  font-size: 5rem;
+  color:var(--base-color);
+  margin-bottom:1.5rem;
+  display:block;
+}
 
-
-
-
-
+.card .title{
+  font-size:1.5rem;
+  margin-bottom:0.75rem;
+}
 
 
 

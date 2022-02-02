@@ -20,9 +20,39 @@ const menuList = document.querySelectorAll(' .menu ul li a')
 for (const element of menuList) {
   element.addEventListener('click', irAseccion)
 }
-console.log(menuList)
+
 
 function irAseccion() {
   nav.classList.remove('show')
 }
+
+
+
+// scroll shadow efect
+
+const header = document.querySelector('#header')
+const headeHeight = header.scrollHeight
+
+window.addEventListener('scroll',
+  () => {
+    (window.scrollY >= headeHeight)
+      ?
+      header.classList.add('scroll')
+      :
+      header.classList.remove('scroll')
+  }
+)
+
+
+// window.addEventListener('scroll', function () {
+//   if (window.scrollY >= headeHeight) {
+//     header.classList.add('scroll')
+//   } else {
+//     header.classList.remove('scroll')
+//   }
+// })
+
+
+
+
 
