@@ -1,3 +1,5 @@
+
+
 /* ===================== RESET ==========================*/
 
 *{
@@ -406,31 +408,114 @@ border-radius:0.25rem;
   margin-bottom:0.75rem;
 }
 
+/* ===================== TESTIMONIALS ==========================*/
 
-
-
-
-
-
-
-
-
-/* main .tittle{
-  font-size : 1.8rem;
-  font-weight: 700;
-  font-family: poppins;
-  text-align: center;  
-  margin-top:2rem;
-  margin-bottom:1rem;
-  color: var(--title-color)
-  
+#testimonials{
+  background-color:white;
 }
- 
-.tittle{
-  font-size : 1.8rem;
-  font-weight: 700;
-  font-family: poppins;
-   margin-top:2rem;
-  margin-bottom:1rem;
-  color: var(--title-color)
-}  */
+
+#testimonials .container{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#testimonials header{
+  margin-bottom:0;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+
+
+#testimonials blockquote{
+  padding:2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.25rem;
+  
+
+}
+
+#testimonials blockquote p{
+  position:relative;
+  text-indent: 1.875rem;
+  margin-bottom:1.5rem;
+  color:var(--title-color)
+}
+
+#testimonials blockquote p span{
+  font-size: 3rem;
+  font-family: serif;
+  color:var(--base-color);
+  position:absolute;
+  top:-0.5rem;
+  left:-1.875rem;
+}
+
+#testimonials cite {
+  display:flex;
+  align-items: center;
+  font-style: normal;
+
+}
+
+#testimonials cite img{
+  
+  width:2rem;
+  height:2rem;
+  /* border-radius:100%; */
+  clip-path: circle();
+
+  object-fit: cover;
+
+  margin:0.5rem;
+}
+
+/* SWIPE */
+
+.swiper-slide {
+  height: auto;
+  padding: 4rem 1rem;
+}
+
+.swiper-pagination-bullet {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--base-color);
+}
+
+
+
+/* ===================== CONTACT ==========================*/
+
+
+#contact .grid{
+  gap:4rem;
+}
+
+#contact .text p{
+  margin-bottom:2rem;
+
+}
+
+#contact .button i,
+#contact ul li i{
+font-size:1.5rem;
+margin-right: 0.625rem;
+}
+
+#contact ul.grid{
+gap:2rem;
+}
+
+#contact ul li {
+  display:flex;
+  align-items:center;
+}
+
+#contact ul li i{
+color:var(--base-color);
+}
+
