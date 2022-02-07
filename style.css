@@ -39,6 +39,14 @@ ul{
    --text-color-light: hsl(0 0% 98%);
    --body-color: hsl(0 0% 98%);
   
+
+   /* ===========fuentes============== */
+
+   --title-font-size:1.85rem;
+   --title-font-family: ;
+   --subtitle-font-size: 1rem;
+   --subtitle-font-family: ;
+
 }
 
 /* ===================== BASE ==========================*/
@@ -59,7 +67,7 @@ body{
   
   font-family: 'poppins',sans-serif;
   font-weight: 700;
-  /* font-size:1.875rem; */
+  font-size:var(--title-font-size);
   -webkit-font-smoothing:auto;
   color: var(--title-color);
   
@@ -115,11 +123,15 @@ body{
 }
 
 .section{ 
-  padding: 5rem 0;
+  padding: calc(5rem + var(--header-height)) 0;
 }
 
 .section  .title{
   margin-bottom:1rem;
+}
+
+.section .subtitle{
+  font-size:var(--subtitle-font-size)
 }
 
 .section header{
@@ -161,9 +173,6 @@ body{
   color: white;
 }
 
-main{
-  margin-top: calc(var(--header-height) + 2rem);
-}
 
 
 /* ===================== LOGO ==========================*/
@@ -519,3 +528,89 @@ gap:2rem;
 color:var(--base-color);
 }
 
+
+/* ===================== FOOTER ==========================*/
+
+footer {
+  background-color:var(--base-color);
+}
+
+footer .logo {
+  display: inline-block;
+  margin-bottom:2rem;
+}
+footer .logo span{
+  color:var(--text-color-light)
+}
+
+footer .brand p{
+  color:var(--text-color-light);
+  margin-bottom:0.7rem;
+
+}
+
+footer ul   {
+display:flex;
+}
+footer ul  li i {
+font-size:1.5rem;
+margin-right: 2rem;
+color:var(--text-color-light);
+
+transition:0.3s;
+display:inline-block;
+}
+
+footer ul li i:hover{
+  transform:translatey(-15%);
+}
+
+.back-to-top{
+  background-color:var(--base-color);
+  position:fixed;
+  right:1rem;
+  bottom:1rem;
+
+  padding:0.5rem;
+  clip-path: circle();
+  color:var(--text-color-light);
+
+  font-size:1.5rem;
+  line-height:0;
+
+  visibility:hidden;
+  opacity:0;
+
+  transition: 0.3s;
+
+  transform: translateY(100%);
+}
+
+.back-to-top.show{
+  visibility:visible;
+  opacity:1;
+  transform:translateY(0%);
+}
+
+
+/*========= MEDIA QUERIES =========*/
+/* extra large devices: 1200 > */
+@media (min-width: 1200px){
+
+  main{
+    margin-top:var(--header-height);
+  }
+
+}
+/* large devices: 1023 > */
+/* large devices: 992 > */
+@media(min-width: 992px){
+  :root{
+
+    --title-font-size:2.2rem;
+    --subtitle-font-size:1.125rem;
+  }
+  
+}
+
+/* medium devices: 767 > */

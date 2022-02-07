@@ -43,6 +43,22 @@ window.addEventListener('scroll',
 )
 
 
+// BACK TO THE TOP 
+
+
+const backToTop = document.querySelector(".back-to-top")
+window.addEventListener("scroll", () => {
+  if (window.scrollY >= 560) {
+    backToTop.classList.add('show')
+
+  } else {
+    backToTop.classList.remove('show')
+  }
+})
+
+
+
+
 // window.addEventListener('scroll', function () {
 //   if (window.scrollY >= headeHeight) {
 //     header.classList.add('scroll')
@@ -84,7 +100,8 @@ scrollReveal.reveal(
   #about .image, #about .text,
   #services header , #services .card,
   #testimonials header , #testimonials .testimonials ,
-  #contact .text , #contact .links
+  #contact .text , #contact .links ,
+  footer .brand , footer .social
   `
 
 
