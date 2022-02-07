@@ -43,9 +43,11 @@ ul{
    /* ===========fuentes============== */
 
    --title-font-size:1.85rem;
-   --title-font-family: ;
+   --title-font-family: 'poppins', sans-serif  ;
    --subtitle-font-size: 1rem;
-   --subtitle-font-family: ;
+   --body-font-family:'DM sans',sans-serif ;
+
+   --font-menu-desktop: 1rem 400 var(--text-color); 
 
 }
 
@@ -57,7 +59,7 @@ html{
 
 body{
    
-  font : 400 1rem 'DM Sans', sans-serif;
+  font : 400 1rem var(--body-font-family);
   color: var(--text-color);
   background: var(--body-color);
   -webkit-font-smoothing:antialiased;
@@ -65,7 +67,7 @@ body{
 
 .title{
   
-  font-family: 'poppins',sans-serif;
+  font-family: var(--title-font-family);
   font-weight: 700;
   font-size:var(--title-font-size);
   -webkit-font-smoothing:auto;
@@ -81,7 +83,7 @@ body{
   align-items:center;
   padding:0 2rem;
   border-radius: 0.25rem;
-  font: 1rem 500 "DM sans", sans-serif;
+  font: 1rem 500 var(--body-font-family);
   transition: background 0.3s;
 }
 
@@ -122,6 +124,7 @@ body{
   gap:2rem;
 }
 
+/* TODO: revisar el padding bottom  */
 .section{ 
   padding: calc(5rem + var(--header-height)) 0;
 }
@@ -161,24 +164,24 @@ body{
 }
 
 #header.scroll{
-  background-color: var(--base-color);
+  /* background-color: var(--base-color); */
  box-shadow: 0px 0px 12px rgba(0,0,0,0.2);
 }
 
-#header.scroll .logo span{
+/* #header.scroll .logo span{
   color:white;
 }
 
 #header.scroll .icon-menu{
   color: white;
-}
+} */
 
 
 
 /* ===================== LOGO ==========================*/
 .logo{
   font-size: 1.3rem;
-  font-family: 'poppins', sans-serif;
+  font-family: var(--title-font-family);
   font-weight: 700;
   color:var(--title-color);
 }
@@ -205,7 +208,8 @@ transition:0.2s;
 position:relative;
 }
 
-nav ul li a:hover{
+nav ul li a:hover,
+nav ul li a.active{
   color:var(--base-color);
 }
 
@@ -222,7 +226,8 @@ nav ul li a::after{
   transition: width 0.2s;
 }
 
-nav ul li a:hover::after{
+nav ul li a:hover::after,
+nav ul li a.active::after {
  width:100%;
 }
 
@@ -251,6 +256,7 @@ nav.show .menu{
 
 }
 
+/* se oculta el ul para el efecto ojo aqui despues  */
 nav .menu ul{
   display:none;
 }
@@ -531,9 +537,14 @@ color:var(--base-color);
 
 /* ===================== FOOTER ==========================*/
 
+#footer.section{
+  padding: 4rem 0;
+}
+
 footer {
   background-color:var(--base-color);
 }
+
 
 footer .logo {
   display: inline-block;
@@ -550,20 +561,31 @@ footer .brand p{
 }
 
 footer ul   {
-display:flex;
+/* display:flex; */
 }
-footer ul  li i {
+
+footer .social{
+grid-auto-flow: column;
+width: fit-content; 
+
+}
+
+footer .social a {
 font-size:1.5rem;
-margin-right: 2rem;
+/* margin-right: 2rem; */
 color:var(--text-color-light);
 
 transition:0.3s;
 display:inline-block;
 }
 
-footer ul li i:hover{
+footer .social a:hover{
   transform:translatey(-15%);
 }
+
+
+/* BACK-TO-TOP */
+
 
 .back-to-top{
   background-color:var(--base-color);
@@ -596,10 +618,140 @@ footer ul li i:hover{
 /*========= MEDIA QUERIES =========*/
 /* extra large devices: 1200 > */
 @media (min-width: 1200px){
+  
+ /* LAYOUT */
+
+  .section{
+    padding: 10rem 0;
+  }
+
+  .container{
+    max-width: 1120px;
+    margin-right: auto;
+    margin-left:auto;
+  }
+
+  .button{
+    height:3.125rem;
+  }
+
+  .section header,
+  #testimonials header{
+    max-width: 32rem;
+    text-align: center;
+    margin-right: auto;
+    margin-left:auto;
+  }
 
   main{
     margin-top:var(--header-height);
   }
+/* 
+  NAV , MENU navigation */
+
+  nav .menu{
+    opacity: 1;
+    visibility:visible;
+  
+    top:0rem;
+    
+  } 
+
+  nav .menu ul{
+    display:flex;
+    gap: 2rem;
+  }
+  
+  nav ul li a.title{
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: var(--body-font-family);
+    -webkit-font-smoothing:antialiased;
+  }
+  
+  nav .menu ul li a.active{
+    font-weight:bold;
+    -webkit-font-smoothing:auto;
+  }
+
+  nav .icon-menu{
+    display:none;
+  }
+ 
+   /* HOME */
+
+  #home .image{
+    order:1;
+  }
+ 
+  #home .text{
+    order:0;
+    max-width: 24rem;
+    text-align:left;
+  }
+
+  #home .container{
+  grid-auto-flow: column;
+  justify-content:space-between;
+  margin: 0 auto;
+  }
+
+  /* ABOUT */
+
+  #about .container {
+    grid-auto-flow: column;
+  /* justify-content:space-between; */
+  margin: 0 auto;
+  }
+
+  /* SERVICES */
+
+  #services .cards{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #services .card{
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+/* TESTIMONIALS */
+
+ #testimonials .container{
+   margin-left:auto;
+   margin-right:auto;
+ }
+
+
+
+ /* CONTACT */
+
+ #contact .container{
+  grid-auto-flow: column;
+  align-items:center;
+ }
+
+ #contact .text{
+   max-width: 25rem;
+ }
+
+
+ /* FOOTER */
+
+ #footer .container{
+  grid-auto-flow: column;
+  align-items:center;
+  justify-content: space-between;
+ }
+
+ #footer.section{
+   padding: 3.75rem 0 ;
+ }
+
+ #footer .logo{
+   font-size: 2.25rem;
+ }
+
 
 }
 /* large devices: 1023 > */
@@ -610,7 +762,9 @@ footer ul li i:hover{
     --title-font-size:2.2rem;
     --subtitle-font-size:1.125rem;
   }
-  
+  .section{
+    padding: 10rem 0;
+  }
 }
 
 /* medium devices: 767 > */
